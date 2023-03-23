@@ -45,6 +45,6 @@ def finetune_get(ftid):
 
 
 
-#resp = file_upload('emails.jsonl')
-#finetune_model(resp['id'], 'email_generator', 'davinci')
+resp = file_upload('emails.jsonl')
+finetune_model(resp['id'], 'email_generator', 'davinci')
 finetune_list()
