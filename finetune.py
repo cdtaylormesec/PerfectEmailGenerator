@@ -5,7 +5,9 @@ from pprint import pprint
 
 with open('openaiapikey.txt', 'r') as infile:
     open_ai_api_key = infile.read()
-openai.api_key = open_ai_api_key
+os.environ["OPENAI_API_KEY"] = open_ai_api_key
+openai.api_key = os.environ["OPENAI_API_KEY"]
+
 
 
 def file_upload(filename, purpose='fine-tune'):

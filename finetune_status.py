@@ -1,9 +1,12 @@
+import os
+import requests
 import openai
+from pprint import pprint
+from dotenv import load_dotenv
 
-with open('openaiapikey.txt', 'r') as infile:
-    open_ai_api_key = infile.read()
+load_dotenv()
 
-openai.api_key = open_ai_api_key
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 def get_fine_tune_status():
     fine_tunes = openai.FineTune.list()
